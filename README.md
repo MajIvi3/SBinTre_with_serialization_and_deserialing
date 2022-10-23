@@ -26,3 +26,13 @@ Oppgaven går ut på å finne antall forekomster av verdier
 dette gjntas til vi havner ut av tree
 3. Hvis like verdier er funnet antall øker
 4. Antall like verdier returneres.
+
+Oppgave 3
+
+private static <T> Node<T> førstePostorden(Node<T> p) 
+
+Førstepostorden returnerer første node post orden med p som rot
+er bygget av kombinasjon av Programkode 5.1.7 h) og Programkode 5.1.15 b) i kompendiet
+
+
+
