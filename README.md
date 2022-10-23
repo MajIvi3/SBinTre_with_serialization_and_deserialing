@@ -34,5 +34,12 @@ private static <T> Node<T> førstePostorden(Node<T> p)
 Førstepostorden returnerer første node post orden med p som rot
 er bygget av kombinasjon av Programkode 5.1.7 h) og Programkode 5.1.15 b) i kompendiet
 
+Oppgav4 
 
+ rekrusiv modell er tatt fra Løsningsforslag - oppgaver i Avsnitt 5.1.7 i kompendie 
+
+eg har tatt kode iterativ versjon av public void postorden(Oppgave<? super T> oppgave) fra løsningsforsalget
+Oppgaver til Avsnitt 5.1.15 - opgave 1.
+
+Kommentararer og oppgavebeskrivelse kommer i morgen
 
