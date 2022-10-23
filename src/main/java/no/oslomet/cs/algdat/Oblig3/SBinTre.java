@@ -95,8 +95,8 @@ public class SBinTre<T> {
         {
             q = p;                                 // q er forelder til p
             cmp = comp.compare(verdi,p.verdi);     // bruker komparatoren
-            //p = cmp < 0 ? p.venstre : p.høyre;     // flytter p
-            if (cmp < 0) p = p.venstre;
+
+            if (cmp < 0){ p = p.venstre;  }              // flytter p
             else
             {
                 p = p.høyre;
@@ -127,20 +127,19 @@ public class SBinTre<T> {
 
     public int antall(T verdi) {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
-        Node<T> p = rot;
-        int antallVerdi = 0;
-
+        Node<T> p = rot;        // starter fra root
+        int antallVerdi = 0;    // antall av like verdier starter fra 0
         while (p != null)
         {
-            int cmp = comp.compare(verdi,p.verdi);
-            if (cmp < 0) p = p.venstre;
+            int cmp = comp.compare(verdi,p.verdi);  // sammenligner
+            if (cmp < 0) {p = p.venstre;}
             else
             {
-                if (cmp == 0) antallVerdi++;
+                if (cmp == 0) antallVerdi++;        // antall øker, vi har fant like verdier
                 p = p.høyre;
             }
         }
-        return antallVerdi;
+        return antallVerdi;                 // returnerer antall
     }
 
     public void nullstill() {

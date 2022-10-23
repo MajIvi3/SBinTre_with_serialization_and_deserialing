@@ -15,3 +15,14 @@ En ny verdi skal legges inn i binær søketre
 dette gjntas til vi havner ut av tree
 3 igjen skal vi enten til venstre eller høyre , men det er ingen noder. Derfor oppretter vi ny node. Denne noden
 er barn til noden som ble passert og skal settes på venstre eller høyre side, avhengig av vedien sin
+
+Oppgave 2
+
+Koden er tatt fra kompendiet i Oppgaver til Avsnitt 5.2.6, oppgave 2
+
+Oppgaven går ut på å finne antall forekomster av verdier
+1 starter fra rotnoden
+2 hvis verdi er mindre en node sin verdi går vi til venstre, hvis verdi er lik eller større går vi til høyre,
+dette gjntas til vi havner ut av tree
+3. Hvis like verdier er funnet antall øker
+4. Antall like verdier returneres.
