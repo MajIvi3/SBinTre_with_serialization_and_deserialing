@@ -1,10 +1,7 @@
 package no.oslomet.cs.algdat.Oblig3;
 
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Objects;
-import java.util.StringJoiner;
+import java.util.*;
 
 public class SBinTre<T> {
     private static final class Node<T>   // en indre nodeklasse
@@ -126,8 +123,15 @@ public class SBinTre<T> {
         while (p != null)            // leter etter verdi
         {
             int cmp = comp.compare(verdi,p.verdi);      // sammenligner
-            if (cmp < 0) { q = p; p = p.venstre; }      // går til venstre
-            else if (cmp > 0) { q = p; p = p.høyre; }   // går til høyre
+            if (cmp < 0) {
+                q = p;
+                p = p.venstre;
+            }      // går til venstre
+            else if (cmp > 0) {
+                q = p;
+                p = p.høyre;
+            }   // går til høyre
+
             else break;    // den søkte verdien ligger i p
         }
         if (p == null) return false;   // finner ikke verdi
@@ -135,9 +139,21 @@ public class SBinTre<T> {
         if (p.venstre == null || p.høyre == null)  // Tilfelle 1) og 2)
         {
             Node<T> b = p.venstre != null ? p.venstre : p.høyre;  // b for barn
-            if (p == rot) rot = b;
-            else if (p == q.venstre) q.venstre = b;
-            else q.høyre = b;
+
+            if (p == rot) {
+                rot = b;
+            }
+
+            else if (p == q.venstre) {
+                q.venstre = b;
+            }
+            else {
+                q.høyre = b;
+            }
+            if ( b != null){
+                b.forelder = q;     // sørger for riktig peker
+            }
+
         }
         else  // Tilfelle 3)
         {
@@ -150,16 +166,29 @@ public class SBinTre<T> {
 
             p.verdi = r.verdi;   // kopierer verdien i r til p
 
-            if (s != p) s.venstre = r.høyre;
-            else s.høyre = r.høyre;
+
+            if (s != p) {
+                s.venstre = r.høyre;
+            }
+            else {
+                s.høyre = r.høyre;
+            }
+            if (r.høyre != null) {
+                r.høyre.forelder = s;       // sørger for riktig peker
+            }
         }
 
         antall--;   // det er nå én node mindre i treet
         return true;
+
+
     }
 
     public int fjernAlle(T verdi) {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
+        if (tom()){     // sjekker om tree er tomt
+            return 0;
+        }
         int verdiAntall = 0;
         while (fjern(verdi)) verdiAntall++;
         return verdiAntall;
@@ -183,7 +212,24 @@ public class SBinTre<T> {
     }
 
     public void nullstill() {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //throw new UnsupportedOperationException("Ikke kodet ennå!");
+        if (!tom()) nullstill(rot);  // nullstiller
+        rot = null; antall = 0;      // treet er nå tomt
+
+    }
+    private void nullstill(Node<T> p)
+    {
+        if (p.venstre != null)
+        {
+            nullstill(p.venstre);      // venstre subtre
+            p.venstre = null;          // nuller peker
+        }
+        if (p.høyre != null)
+        {
+            nullstill(p.høyre);        // høyre subtre
+            p.høyre = null;            // nuller peker
+        }
+        p.verdi = null;              // nuller verdien
     }
 
     private static <T> Node<T> førstePostorden(Node<T> p) {
@@ -262,11 +308,43 @@ public class SBinTre<T> {
     }
 
     public ArrayList<T> serialize() {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+        //throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //if (tom()) return;                   // tomt tre
+        ArrayList<T> ret = new ArrayList<>();       // skal returneres
+
+        Queue<Node<T>> kø = new ArrayDeque<>(antall);   // den skal gå gjennom noder
+
+        kø.add(rot);            // legger rot først
+
+        while (!kø.isEmpty())    // hvis empty da returneres true og løkka stopper
+        {
+
+            Node<T> p = kø.poll();  //fjerner noden- øverst node
+
+            ret.add(p.verdi);
+
+            if (p.venstre != null) kø.add(p.venstre);
+            if (p.høyre != null) kø.add(p.høyre);
+
+        }
+
+        return ret;
+
     }
 
     static <K> SBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+        SBinTre tree = new SBinTre(c);  // sammenligner elementer /verdier
+
+        for (K liste : data){
+
+            tree.leggInn(liste);        // siden legg inn tar seg av hele tree til og med root, holder det bare å kjøre den i løkke og legge inn data
+
+        }
+        return tree;
+
     }
 
 

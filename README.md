@@ -37,7 +37,7 @@ etter p i postorden.
 
 Oppgav4 
 
-rekrusiv modell er tatt fra Løsningsforslag - oppgaver i Avsnitt 5.1.7 i kompendie
+rekrusiv modell er tatt fra Løsningsforslag - oppgaver i Avsnitt 5.1.7 i kompendie oppgave 7
 Traverserer et binærtre i postorden. Det aer en privat rekursiv metode og en offentlig metode som kaller den private.
 
 Je har tatt kode iterativ versjon av public void postorden(Oppgave<? super T> oppgave) fra løsningsforsalget
@@ -46,8 +46,20 @@ Oppgaver til Avsnitt 5.1.15 - opgave 1.
 Traverserer et binærtre i iterativ postorden, ved bruk av forelderreferansene
 
 
+Oppgave 5
+
+Siden oppgaver nevner at metoden serialize skal bruke kø til å traversere treet i nivå orden tok jeg
+utgangspunktet fra oppgave Programkode 5.1.6 a) og bytter til metoder som er støttet av Interface Queue<E>
+
+Deserialize metode tar arrayet som parameter, og legge inn alle verdiene (igjen i nivå orden) ved bruk av en for 
+løkke og legginn() metode.
+
 
 Oppgave 6
+
+metoden  nullstill() tømmer treet. Rekursiv traversering i postorden å traversere treet og så fortløpende nulle verdier og refranser.
+
+ koden er tatt fra Oppgaver til Avsnitt 5.2.8  oppgave 5
 
 public int fjernAlle(T verdi) - er tatt fra Løsningsforslag - oppgaver i Avsnitt 5.2.8 oppgave 3
 Fjerner alle forekomstene av verdi og returnere det antallet som ble fjernet. Det betyr spesielt at
@@ -65,5 +77,6 @@ Koden tar hensy til 3 ting:
 
 Målet er å flytte pekere til riktige noder, refranse skal peke til dens forelder, slik kan vi få 
 velykket fjerning. Hvis fjerning var vellykket returnerer metoden true og antall mynker siden vi har en node  mindre
+
 
 
