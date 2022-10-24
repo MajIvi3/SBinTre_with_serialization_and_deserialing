@@ -159,7 +159,10 @@ public class SBinTre<T> {
     }
 
     public int fjernAlle(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //throw new UnsupportedOperationException("Ikke kodet ennå!");
+        int verdiAntall = 0;
+        while (fjern(verdi)) verdiAntall++;
+        return verdiAntall;
     }
 
     public int antall(T verdi) {
