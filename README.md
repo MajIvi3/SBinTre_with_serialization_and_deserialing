@@ -1,33 +1,43 @@
 # Obligatorisk oppgave 3 i Algoritmer og Datastrukturer
 
-Denne oppgaven er en innlevering i Algoritmer og Datastrukturer. 
-Oppgaven er levert av følgende student:
-* Navn: Majda ivic, S362095, s362095@oslomet.no
+
+> Denne oppgaven er en innlevering i Algoritmer og Datastrukturer. 
+> Oppgaven er levert av følgende student:
+> * Navn: Majda ivic, S362095, s362095@oslomet.no
+>
+>
+>
+> # Oppgavebeskrivelse
 
 
-# Oppgavebeskrivelse
 
-Oppgave 1
 
-En ny verdi skal legges inn i binær søketre
-1 starter fra rotnoden
-2 hvis verdi er mindre en node sin verdi går vi til venstre, hvis verdi er lik eller større går vi til høyre, 
-dette gjntas til vi havner ut av tree
-3 igjen skal vi enten til venstre eller høyre , men det er ingen noder. Derfor oppretter vi ny node. Denne noden
-er barn til noden som ble passert og skal settes på venstre eller høyre side, avhengig av vedien sin
+## Oppgave 1
 
-Oppgave 2
+<b>Lag metoden public boolean leggInn(T verdi)</b>
 
-Koden er tatt fra kompendiet i Oppgaver til Avsnitt 5.2.6, oppgave 2
+En ny verdi skal legges inn i binært søketre
 
-Oppgaven går ut på å finne antall forekomster av verdier
-1 starter fra rotnoden
-2 hvis verdi er mindre en node sin verdi går vi til venstre, hvis verdi er lik eller større går vi til høyre,
-dette gjntas til vi havner ut av tree
-3. Hvis like verdier er funnet antall øker
-4. Antall like verdier returneres.
+1. Starter fra rotnoden
+2. hvis verdien er mindre enn nodens verdi, går vi til venstre, hvis verdien er lik eller større, går vi til høyre, 
+Dette gjentas til vi havner ut av treet
+3. Igjen går vi enten til venstre eller høyre , men det er ingen noder. Derfor oppretter vi en ny node. Denne noden
+er barn av noden som ble passert og skal settes på venstre eller høyre side, avhengig av verdien
 
-Oppgave 3
+ ## Oppgave 2
+ 
+ <b>Lag kode for metoden public int antall(T verdi)</b>
+
+*Hovedkoden er hentet fra kompendiet fra **Oppgaver til Avsnitt 5.2.6, oppgave 2***
+
+Oppgaven er å finne antall forekomster av verdier 
+1. starter fra rotnoden
+2. hvis verdien er mindre enn nodens verdi, går vi til venstre, hvis verdien er lik eller større, går vi til høyre,
+Dette gjentar seg til vi havner ut av treet
+3. Hvis like verdier blir funnet, øker antall
+4. Antall dupliserte verdier returneres.
+
+ ## Oppgave 3
 
 Koden er bygget av kombinasjon av Programkode 5.1.7 h) og Programkode 5.1.15 b) i kompendiet
 
@@ -35,7 +45,7 @@ Førstepostorden returnerer første node postorden med p som rot. nestePostorden
 etter p i postorden. 
 
 
-Oppgav4 
+ ## Oppgav4 
 
 rekrusiv modell er tatt fra Løsningsforslag - oppgaver i Avsnitt 5.1.7 i kompendie oppgave 7
 Traverserer et binærtre i postorden. Det aer en privat rekursiv metode og en offentlig metode som kaller den private.
@@ -46,7 +56,7 @@ Oppgaver til Avsnitt 5.1.15 - opgave 1.
 Traverserer et binærtre i iterativ postorden, ved bruk av forelderreferansene
 
 
-Oppgave 5
+## Oppgave 5
 
 Siden oppgaver nevner at metoden serialize skal bruke kø til å traversere treet i nivå orden tok jeg
 utgangspunktet fra oppgave Programkode 5.1.6 a) og bytter til metoder som er støttet av Interface Queue<E>
@@ -55,7 +65,7 @@ Deserialize metode tar arrayet som parameter, og legge inn alle verdiene (igjen 
 løkke og legginn() metode.
 
 
-Oppgave 6
+## Oppgave 6
 
 metoden  nullstill() tømmer treet. Rekursiv traversering i postorden å traversere treet og så fortløpende nulle verdier og refranser.
 
