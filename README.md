@@ -114,6 +114,10 @@ den skal returnere 0 hvis treet ikke inneholder verdi.
 - 3) metoden  nullstill() tømmer treet.
 
  *Tar utgangspunkt i kompendiets programkode: **Oppgaver til Avsnitt 5.2.8  oppgave 5***
+ 
+ 
+ ***Kilde: Algoritmer og datastrukturer med Java Nettbasert lærebok*** </br>
+ ***Link:*** https://www.cs.hioa.no/~ulfu/appolonius/?fbclid=IwAR2DTWVDZ2qLxNY1SU6BHgtVg0J0pyZYsN1ZlkTxq34tTPfcHJeAdPnodSk
 
 
 
